@@ -27,10 +27,14 @@ namespace ExercicioException.Entities
 
         public void WithDraw(double amount)
         {
-            if (amount > WithDrawLimit) throw new DomainException("Exceed withdrawal limit!");
-            
-            if (amount > Balance ) throw new DomainException("Insufficient balance!");
-            
+            if (amount > WithDrawLimit)
+            {
+                throw new DomainException("Exceed withdrawal limit!");
+            }
+            if (amount > Balance)
+            {
+                throw new DomainException("Insufficient balance!");
+            }
 
             Balance -= amount;
         }
